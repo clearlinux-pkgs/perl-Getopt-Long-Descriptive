@@ -4,13 +4,14 @@
 #
 Name     : perl-Getopt-Long-Descriptive
 Version  : 0.104
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Getopt-Long-Descriptive-0.104.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Getopt-Long-Descriptive-0.104.tar.gz
-Summary  : Getopt::Long, but simpler and more powerful
+Summary  : 'Getopt::Long, but simpler and more powerful'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Getopt-Long-Descriptive-license = %{version}-%{release}
+Requires: perl-Getopt-Long-Descriptive-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(CPAN::Meta::Check)
 BuildRequires : perl(Data::OptList)
@@ -35,7 +36,6 @@ Summary: dev components for the perl-Getopt-Long-Descriptive package.
 Group: Development
 Provides: perl-Getopt-Long-Descriptive-devel = %{version}-%{release}
 Requires: perl-Getopt-Long-Descriptive = %{version}-%{release}
-Requires: perl-Getopt-Long-Descriptive = %{version}-%{release}
 
 %description dev
 dev components for the perl-Getopt-Long-Descriptive package.
@@ -49,8 +49,18 @@ Group: Default
 license components for the perl-Getopt-Long-Descriptive package.
 
 
+%package perl
+Summary: perl components for the perl-Getopt-Long-Descriptive package.
+Group: Default
+Requires: perl-Getopt-Long-Descriptive = %{version}-%{release}
+
+%description perl
+perl components for the perl-Getopt-Long-Descriptive package.
+
+
 %prep
 %setup -q -n Getopt-Long-Descriptive-0.104
+cd %{_builddir}/Getopt-Long-Descriptive-0.104
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -75,7 +85,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Getopt-Long-Descriptive
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Getopt-Long-Descriptive/LICENSE
+cp %{_builddir}/Getopt-Long-Descriptive-0.104/LICENSE %{buildroot}/usr/share/package-licenses/perl-Getopt-Long-Descriptive/8b5e17836ab3a81ac7330abf4b518c85786ad172
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -88,9 +98,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Getopt/Long/Descriptive.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Getopt/Long/Descriptive/Opts.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Getopt/Long/Descriptive/Usage.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -100,4 +107,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-Getopt-Long-Descriptive/LICENSE
+/usr/share/package-licenses/perl-Getopt-Long-Descriptive/8b5e17836ab3a81ac7330abf4b518c85786ad172
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Getopt/Long/Descriptive.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Getopt/Long/Descriptive/Opts.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Getopt/Long/Descriptive/Usage.pm
