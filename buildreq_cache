@@ -1,8 +1,7 @@
-0.104
+0.105
 perl(CPAN::Meta::Check)
 perl(Data::OptList)
 perl(Module::Implementation)
-perl(Module::Runtime)
 perl(Params::Util)
 perl(Params::Validate)
 perl(Sub::Exporter)
