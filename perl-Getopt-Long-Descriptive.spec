@@ -4,7 +4,7 @@
 #
 Name     : perl-Getopt-Long-Descriptive
 Version  : 0.105
-Release  : 4
+Release  : 5
 URL      : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Getopt-Long-Descriptive-0.105.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Getopt-Long-Descriptive-0.105.tar.gz
 Summary  : 'Getopt::Long, but simpler and more powerful'
@@ -110,6 +110,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/Getopt/Long/Descriptive.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Getopt/Long/Descriptive/Opts.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Getopt/Long/Descriptive/Usage.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Getopt/Long/Descriptive.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Getopt/Long/Descriptive/Opts.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Getopt/Long/Descriptive/Usage.pm
