@@ -4,12 +4,13 @@
 #
 Name     : perl-Getopt-Long-Descriptive
 Version  : 0.110
-Release  : 15
+Release  : 16
 URL      : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Getopt-Long-Descriptive-0.110.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Getopt-Long-Descriptive-0.110.tar.gz
 Summary  : 'Getopt::Long, but simpler and more powerful'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
+Requires: perl-Getopt-Long-Descriptive-license = %{version}-%{release}
 Requires: perl-Getopt-Long-Descriptive-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(CPAN::Meta::Check)
@@ -37,6 +38,14 @@ Requires: perl-Getopt-Long-Descriptive = %{version}-%{release}
 
 %description dev
 dev components for the perl-Getopt-Long-Descriptive package.
+
+
+%package license
+Summary: license components for the perl-Getopt-Long-Descriptive package.
+Group: Default
+
+%description license
+license components for the perl-Getopt-Long-Descriptive package.
 
 
 %package perl
@@ -74,6 +83,8 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Getopt-Long-Descriptive
+cp %{_builddir}/Getopt-Long-Descriptive-0.110/LICENSE %{buildroot}/usr/share/package-licenses/perl-Getopt-Long-Descriptive/f285360d72d04e8463035e2d805138258d9ac8df
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -93,8 +104,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Getopt::Long::Descriptive::Opts.3
 /usr/share/man/man3/Getopt::Long::Descriptive::Usage.3
 
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Getopt-Long-Descriptive/f285360d72d04e8463035e2d805138258d9ac8df
+
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Getopt/Long/Descriptive.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Getopt/Long/Descriptive/Opts.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Getopt/Long/Descriptive/Usage.pm
+/usr/lib/perl5/*
