@@ -4,7 +4,7 @@
 #
 Name     : perl-Getopt-Long-Descriptive
 Version  : 0.111
-Release  : 18
+Release  : 19
 URL      : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Getopt-Long-Descriptive-0.111.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Getopt-Long-Descriptive-0.111.tar.gz
 Summary  : 'Getopt::Long, but simpler and more powerful'
