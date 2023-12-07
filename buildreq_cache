@@ -1,6 +1,7 @@
-0.111
+0.112
 perl(CPAN::Meta::Check)
 perl(Data::OptList)
+perl(Getopt::Long)
 perl(Module::Implementation)
 perl(Params::Util)
 perl(Params::Validate)

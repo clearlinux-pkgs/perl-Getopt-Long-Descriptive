@@ -1,2 +1,8 @@
 # This file contains additional runtime requirements that did not get
 # picked up automatically. One name per line, no whitespace.
+perl(File::Basename)
+perl(Getopt::Long 2.55)
+perl(List::Util)
+perl(Params::Validate)
+perl(Scalar::Util)
+perl(Sub::Exporter)
