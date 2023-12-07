@@ -7,7 +7,7 @@
 #
 Name     : perl-Getopt-Long-Descriptive
 Version  : 0.112
-Release  : 22
+Release  : 23
 URL      : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Getopt-Long-Descriptive-0.112.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Getopt-Long-Descriptive-0.112.tar.gz
 Summary  : 'Getopt::Long, but simpler and more powerful'
@@ -16,7 +16,7 @@ License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Getopt-Long-Descriptive-license = %{version}-%{release}
 Requires: perl-Getopt-Long-Descriptive-perl = %{version}-%{release}
 Requires: perl(File::Basename)
-Requires: perl(Getopt::Long 2.55)
+Requires: perl(Getopt::Long)
 Requires: perl(List::Util)
 Requires: perl(Params::Validate)
 Requires: perl(Scalar::Util)
